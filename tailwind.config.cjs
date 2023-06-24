@@ -2,119 +2,52 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 module.exports = {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
-    fontSize: {
-      xs: [
-        "0.75rem",
-        {
-          lineHeight: "1rem",
-        },
-      ],
-      sm: [
-        "0.875rem",
-        {
-          lineHeight: "1.5rem",
-        },
-      ],
-      base: [
-        "1rem",
-        {
-          lineHeight: "1.75rem",
-        },
-      ],
-      lg: [
-        "1.125rem",
-        {
-          lineHeight: "2rem",
-        },
-      ],
-      xl: [
-        "1.25rem",
-        {
-          lineHeight: "2rem",
-        },
-      ],
-      "2xl": [
-        "1.5rem",
-        {
-          lineHeight: "2rem",
-        },
-      ],
-      "3xl": [
-        "2rem",
-        {
-          lineHeight: "2.5rem",
-        },
-      ],
-      "4xl": [
-        "2.5rem",
-        {
-          lineHeight: "3.5rem",
-        },
-      ],
-      "5xl": [
-        "3rem",
-        {
-          lineHeight: "3.5rem",
-        },
-      ],
-      "6xl": [
-        "3.75rem",
-        {
-          lineHeight: "1",
-        },
-      ],
-      "7xl": [
-        "4.5rem",
-        {
-          lineHeight: "1.1",
-        },
-      ],
-      "8xl": [
-        "6rem",
-        {
-          lineHeight: "1",
-        },
-      ],
-      "9xl": [
-        "8rem",
-        {
-          lineHeight: "1",
-        },
-      ],
-    },
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme: {
     extend: {
-      backgroundImage: (theme) => ({
-        screens: "url('/path-to/image.png')",
-      }),
+      boxShadow: {
+        big: "0px 7px 32px rgb(0 0 0 / 35%);",
+        massive: "0px 64px 64px rgba(0, 0, 0, 0.15), 0px 32px 32px rgba(0, 0, 0, 0.15), 0px 16px 16px rgba(0, 0, 0, 0.15), 0px 8px 8px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15);",
+      },
       colors: {
-        black: "#131115",
-      
-        accent: {
-            "50": "#EBEBFF",
-      "100": "#D2D2FE",
-      "200": "#A6A4FE",
-      "300": "#7E7CFD",
-      "400": "#524FFD",
-      "500": "#2522FC",
-      "600": "#0703E2",
-      "700": "#0502AB",
-      "800": "#03026F",
-      "900": "#020137"
+        onyx: {
+          50: "#F1F1F4",
+          100: "#E3E3E8",
+          200: "#C8C6D2",
+          300: "#AFADBE",
+          400: "#9490A7",
+          500: "#787490",
+          600: "#605D75",
+          700: "#4B485B",
+          800: "#34323F",
+          900: "#1f1e26",
+          950: "#1c1b22"
+        },
+        blue: {
+          50: "#F6F6FE",
+          100: "#ECEDFD",
+          200: "#D0D1FB",
+          300: "#B9BAF9",
+          400: "#9395F5",
+          500: "#6366F1",
         },
       },
+      borderRadius: {
+        "4xl": "2rem",
+        "5xl": "3rem",
+        "6xl": "5rem",
+      },
       fontFamily: {
-
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+        display: ["Clash Display", ...defaultTheme.fontFamily.sans],
         mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
       },
     },
   },
-	plugins: [
-		 require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/line-clamp'),
-		require('@tailwindcss/aspect-ratio'),
-	],
-}
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
+};

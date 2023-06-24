@@ -1,10 +1,11 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Home from "@/components/work/Home.astro";
 import { AstroSeo } from "@astrolib/seo";
 ---
 
 <AstroSeo
-  title="Author"
+  title="Home"
   description="Your site description goes here"
   canonical="https://www.lexingtonthemes.com"
   openGraph={{
@@ -38,5 +39,5 @@ import { AstroSeo } from "@astrolib/seo";
   }}
 />
 <BaseLayout>
-
+  <Home/>
 </BaseLayout>

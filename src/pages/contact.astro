@@ -1,10 +1,14 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import FormsLayout from "@/layouts/FormsLayout.astro";
+import Contact from "@/components/infopages/Contact.astro";
 import { AstroSeo } from "@astrolib/seo";
 ---
 
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
 <AstroSeo
-  title="Team"
+  title="Home"
   description="Your site description goes here"
   canonical="https://www.lexingtonthemes.com"
   openGraph={{
@@ -37,6 +41,6 @@ import { AstroSeo } from "@astrolib/seo";
     cardType: "summary_large_image",
   }}
 />
-<BaseLayout>
-
-</BaseLayout>
+<FormsLayout>
+  <Contact />
+</FormsLayout>

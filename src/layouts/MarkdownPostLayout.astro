@@ -39,23 +39,58 @@ import { AstroSeo } from "@astrolib/seo";
   }}
 />
 <BaseLayout>
-  <div
-    class="mx-auto hover:prose-a:text-black prose prose-a:text-accent-500 prose-blockquote:border-l-black prose-blockquote:text-slate-500 prose-code:text-black prose-headings:font-bold prose-headings:text-black prose-headings:tracking-tighter prose-li:marker:text-accent-500 text-slate-500 py-24 prose-pre:border">
-    <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
-
-    <p>{frontmatter.title}</p>
-    <p><em>{frontmatter.description}</em></p>
-    <p>Written by: {frontmatter.author}</p>
-    <div class="flex flex-wrap gap-3 mt-12">
-      {
-        frontmatter.tags.map((tag) => (
-          <span class="inline-flex items-center text-sm font-light text-black dark:text-white  underline hover:text-accent-300">
-            <a href={`/tags/${tag}`}>{tag}</a>
-          </span>
-        ))
-      }
+  <section class="relative overflow-hidden">
+    <div
+      class="absolute inset-x-0 top-0 h-96 rotate-180 text-gray-500/20 opacity-60 [mask-image:linear-gradient(to_bottom,transparent,white)]">
+      <svg
+        class="absolute inset-0 h-full w-full"
+        xmlns="http://www.w3.org/2000/svg"
+        ><defs
+          ><pattern
+            id="grid-pattern"
+            width="32"
+            height="32"
+            patternUnits="userSpaceOnUse"
+            x="50%"
+            y="100%"
+            patternTransform="translate(0 -1)"
+            ><path d="M0 32V.5H32" fill="none" stroke="currentColor"
+            ></path></pattern
+          ></defs
+        ><rect width="100%" height="100%" fill="url(#grid-pattern)"></rect></svg
+      >
     </div>
-    <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
-    <slot />
-  </div>
+    <div
+      class="px-8 pt-32 pb-24 mx-auto md:px-12 lg:px-36 lg:pt-64 max-w-7xl relative">
+      <div class="max-w-xl text-center mx-auto">
+        <p class="text-white text-sm">
+          {frontmatter.pubDate.toString().slice(0, 10)}<span
+            class="text-onyx-300">
+            / {frontmatter.author}</span
+          >
+        </p>
+        <h1 class="text-4xl text-white leading-6 mt-8 font-display">
+          {frontmatter.title}
+        </h1>
+        <p class="text-base text-onyx-300 mt-4">
+          <em>{frontmatter.description}</em>
+        </p>
+      </div>
+      <div>
+        <div class="flex flex-wrap gap-3 mt-6 justify-center mx-auto">
+          {
+            frontmatter.tags.map((tag) => (
+              <span class="inline-flex items-center rounded-md bg-onyx-800 px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-onyx-800">
+                <a href={`/tags/${tag}`}>{tag}</a>
+              </span>
+            ))
+          }
+        </div>
+      </div>
+      <div class="prose-styles">
+        <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+        <div class="max-w-3xl mx-auto mt-24"><slot /></div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

@@ -1,13 +1,14 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import EntriesOne from "../components/entries/EntriesOne.astro";
-const allPosts = await getCollection("posts");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Privacy from "@/components/infopages/Privacy.astro";
 import { AstroSeo } from "@astrolib/seo";
 ---
 
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
 <AstroSeo
-  title="Blog three"
+  title="Privacy"
   description="Your site description goes here"
   canonical="https://www.lexingtonthemes.com"
   openGraph={{
@@ -41,26 +42,5 @@ import { AstroSeo } from "@astrolib/seo";
   }}
 />
 <BaseLayout>
-  <section>
-    <div class="px-8 md:px-12 mx-auto max-w-7xl py-12 lg:py-32">
-      <ul
-        class="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-x-3 gap-y-24 lg:gap-x-6">
-        {
-          allPosts
-            .slice()
-            .map((post) => (
-              <EntriesOne
-                url={"/posts/" + post.slug}
-                title={post.data.title}
-                description={post.data.description}
-                alt={post.data.title}
-                pubDate={post.data.pubDate.toString().slice(0, 10)}
-                author={post.data.author}
-                image={post.data.image.url}
-              />
-            ))
-        }
-      </ul>
-    </div>
-  </section>
+  <Privacy />
 </BaseLayout>
