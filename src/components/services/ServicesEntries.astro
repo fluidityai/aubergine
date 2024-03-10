@@ -1,0 +1,13 @@
+---
+const { service, url } = Astro.props;
+---
+
+<a
+  href={url}
+  title={service}
+  aria-label={service}
+  class=" border-onyx-800 group">
+  <p class="text-xl font-medium leading-6 text-white group-hover:text-blue-300">
+    {service}
+  </p>
+</a>

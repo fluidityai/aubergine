@@ -1,5 +1,7 @@
-<div class="fixed inset-x-0 top-2 lg:top-8 z-50">
-  <div class="mx-auto px-8 lg:max-w-lg">
+<div class="fixed inset-x-0 top-2 lg:top-8 z-50"  x-data="{ atTop: true }">
+  <div class="mx-auto px-8 lg:max-w-lg transition-all duration-1000 ease-in-out transform"
+  :class="{ ' max-w-3xl ': !atTop, 'lg:max-w-lg': atTop }"
+      @scroll.window="atTop = (window.pageYOffset > 50 ? false : true)">
     <div
       class="flex flex-col backdrop-blur-xl backdrop-filter bg-onyx-900/60 border border-onyx-800 md:flex-row md:items-center md:justify-between mx-auto p-2 relative lg:rounded-2xl rounded-xl shadow-massive w-full"
       x-data="{ open: false }">
@@ -22,13 +24,15 @@
               class="inline-flex"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"></path><path
+              stroke-width="2"
+            ></path><path
               d="M6 18L18 6M6 6l12 12"
               :class="{'hidden': !open, 'inline-flex': open }"
               class="hidden"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"></path></svg
+              stroke-width="2"
+            ></path></svg
           ></button
         >
       </div><nav
@@ -38,18 +42,26 @@
           class="items-center gap-3 justify-center list-none md:inline-flex md:ml-auto md:space-y-0 md:text-left space-y-2 text-center">
           <li>
             <a
+              href="/system/overview"
+              title="link to your page"
+              aria-label="your label"
               class="px-2 py-10 text-xs text-white hover:text-blue-300"
-              href="/system/overview">Overview</a
+              >Overview</a
             >
           </li><li>
             <a
+              href="/system/styleguide"
+              title="link to your page"
+              aria-label="your label"
               class="px-2 py-10 text-xs text-white hover:text-blue-300"
-              href="/system/styleguide">Style Guide</a
+              >Style Guide</a
             >
           </li><li>
             <a
-              class="inline-flex items-center px-4 py-2 text-xs text-onyx-950 text-center transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-tr from-blue-500 via-blue-400 to-blue-300 hover:to-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300"
               href="https://lexingtonthemes.lemonsqueezy.com/checkout/buy/7064a23c-2b0a-45a4-8e4a-8a9227ee8b0c"
+              title="link to your page"
+              aria-label="your label"
+              class="inline-flex items-center px-4 py-2 text-xs text-onyx-950 text-center transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-tr from-blue-500 h-10 via-blue-400 to-blue-300 hover:to-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300"
               >Buy Aubergine</a
             >
           </li>

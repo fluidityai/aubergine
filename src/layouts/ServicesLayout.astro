@@ -1,0 +1,24 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+import HeaderGrid from "@/components/global/HeaderGrid.astro";
+---
+<BaseLayout>
+  <section class="relative overflow-hidden">
+    <HeaderGrid />
+    <div
+      class="px-8 pt-32 pb-24 mx-auto md:px-12 lg:px-36 lg:pt-64 max-w-7xl relative">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="3000">
+        <h1 class="text-4xl text-white font-display">
+          {frontmatter.service}
+        </h1>
+        <p class="text-onyx-300 mt-4">{frontmatter.description}.</p>
+      </div>
+      <div class="prose-styles">
+        <slot />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,47 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+import HeaderGrid from "@/components/global/HeaderGrid.astro";
+---
+
+<BaseLayout>
+  <section class="relative overflow-hidden">
+    <HeaderGrid />
+
+    <div
+      class="px-8 pt-32 pb-24 mx-auto md:px-12 lg:px-36 lg:pt-64 max-w-7xl relative">
+      <div class="max-w-xl text-center mx-auto">
+        <p class="text-white text-sm">
+          {frontmatter.pubDate.toString().slice(0, 10)}<span
+            class="text-onyx-300">
+            / {frontmatter.author}</span
+          >
+        </p>
+        <h1 class="text-4xl text-white leading-6 mt-8 font-display">
+          {frontmatter.title}
+        </h1>
+        <p class="text-base text-onyx-300 mt-4">
+          <em>{frontmatter.description}</em>
+        </p>
+      </div>
+      <div>
+        <div class="flex flex-wrap gap-3 mt-6 justify-center mx-auto">
+          {
+            frontmatter.tags.map((tag) => (
+              <span class="inline-flex items-center rounded-md bg-onyx-800 px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-onyx-800">
+                <a href={`/tags/${tag}`}>{tag}</a>
+              </span>
+            ))
+          }
+        </div>
+      </div>
+      <div class="prose-styles">
+        <img
+          src={frontmatter.image.url}
+          alt={frontmatter.image.alt}
+        />
+        <div class="max-w-3xl mx-auto mt-24"><slot /></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

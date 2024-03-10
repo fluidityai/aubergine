@@ -1,0 +1,34 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+import HeaderGrid from "@/components/global/HeaderGrid.astro";
+---
+<BaseLayout>
+  <section class="relative overflow-hidden">
+    <HeaderGrid />
+    <div
+      class="px-8 pt-32 pb-24 mx-auto md:px-12 lg:px-36 lg:pt-64 max-w-7xl relative">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="3000">
+        <div class="flex-wrap flex gap-2 items-center">
+          <img
+            class="object-cover rounded-full shrink-0 h-8 w-8 drop-shadow-3xl"
+            src={frontmatter.logo.url}
+            alt={frontmatter.logo.alt}
+          />
+          <p class="text-sm font-medium leading-6 text-white">
+            {frontmatter.work}
+            <span class="text-onyx-300"
+              >/ {frontmatter.launchDate.toString().slice(10, 15)}</span
+            >
+          </p>
+        </div>
+        <h1 class="text-4xl lg:text-5xl text-white font-display mt-12">
+          {frontmatter.description}
+        </h1>
+      </div>
+      <div class="prose-styles"><slot /></div>
+    </div>
+  </section>
+</BaseLayout>

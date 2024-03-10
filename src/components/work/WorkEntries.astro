@@ -1,0 +1,29 @@
+---
+const { client, url, description, launchDate, work, logo } = Astro.props;
+---
+
+<li>
+  <figure
+    class="relative tilt-card h-full p-8 rounded-3xl bg-gradient-to-tr from-onyx-950 to-onyx-700 border border-onyx-800 shadow-massive">
+    <a
+      href={url}
+      title={client}
+      aria-label={client}
+      class="h-full group flex flex-col justify-between">
+      <img
+        src={logo}
+        alt={client}
+        class="object-cover shrink-0 h-16 w-16"
+      />
+      <blockquote class="relative space-y-3 mt-24">
+        <span class="text-xs text-onyx-400">{launchDate}</span>
+        <p class="text-sm font-medium leading-6 text-white">
+          {client} / <span class="text-onyx-300"> {work}</span>
+        </p>
+        <p class="text-base text-onyx-300 line-clamp-3">
+          {description}
+        </p>
+      </blockquote>
+    </a>
+  </figure>
+</li>
