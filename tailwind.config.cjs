@@ -6,48 +6,52 @@ module.exports = {
   theme: {
     boxShadow: {
       big: "0px 7px 32px rgb(0 0 0 / 35%);",
-      massive: "0px 64px 64px rgba(0, 0, 0, 0.15), 0px 32px 32px rgba(0, 0, 0, 0.15), 0px 16px 16px rgba(0, 0, 0, 0.15), 0px 8px 8px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15);",
+      massive:
+        "0px 64px 64px rgba(0, 0, 0, 0.15), 0px 32px 32px rgba(0, 0, 0, 0.15), 0px 16px 16px rgba(0, 0, 0, 0.15), 0px 8px 8px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15);",
     },
     colors: {
       white: colors.white,
       black: colors.black,
       pink: colors.pink,
-      indigo: colors.indigo,
-      transparent:colors.transparent,
+      indigo: colors.blue,
+      transparent: colors.transparent,
       onyx: {
         50: "#F1F1F4",
         100: "#E3E3E8",
         200: "#C8C6D2",
         300: "#AFADBE",
-        400: "#9490A7",
-        500: "#787490",
+        400: "hsl(73, 70%, 45%)",
+        500: "hsl(175, 64%, 35%)",
         600: "#605D75",
         700: "#4B485B",
         800: "#34323F",
         900: "#1f1e26",
-        950: "#1c1b22"
+        950: "#1c1b22",
       },
       blue: {
         50: "#F6F6FE",
         100: "#ECEDFD",
         200: "#D0D1FB",
-        300: "#B9BAF9",
-        400: "#9395F5",
-        500: "#6366F1",
+        300: "hsl(196, 72%, 52%)",
+        400: "hsl(203, 61%, 30%)",
+        500: "hsl(203, 62%, 19%)",
+        600: "hsl(203, 62%, 9%)",
       },
     },
 
     fontFamily: {
-      sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-      display: ["Clash Display", ...defaultTheme.fontFamily.sans],
-      mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
+      sans: ["Satoshi", ...defaultTheme.fontFamily.sans],
+      display: [
+        ["Satoshi", ...defaultTheme.fontFamily.sans],
+        { fontVariationSettings: '"wdth" 125' },
+      ],
     },
     extend: {
-       borderRadius: {
-      "4xl": "2rem",
-      "5xl": "3rem",
-      "6xl": "5rem",
-    },
+      borderRadius: {
+        "4xl": "2rem",
+        "5xl": "3rem",
+        "6xl": "5rem",
+      },
     },
   },
   plugins: [

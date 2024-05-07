@@ -1,26 +1,27 @@
 ---
 const logos = [
-  { src: "/logos/discord.svg", alt: "Discord Logo" },
-  { src: "/logos/zoom.svg", alt: "Zoom Logo" },
-  { src: "/logos/classpass.svg", alt: "ClassPass Logo" },
+  { src: "/logos/eskmd.png", alt: "ESKMD" },
+  { src: "/logos/glendale.png", alt: "Glendale" },
+  { src: "/logos/utah.png", alt: "Utah Intermountain" },
   {
-    src: "/logos/splunge.svg",
-    alt: "Splunge Logo",
+    src: "/logos/goodlife.png",
+    alt: "Good Life",
     classes: "hidden sm:block",
   },
 ];
 ---
 
 <section>
-  <div class="px-8 mx-auto md:px-12 lg:px-36 max-w-7xl">
+  <div class="mx-auto max-w-7xl px-8 md:px-12 lg:px-36">
     <div
-      class="grid grid-cols-1 py-12 items-center lg:grid-cols-4 border-y md:grid-cols-2 border-onyx-800 lg:gap-24">
-      <div class="col-span-full lg:col-span-1 lg:max-w-none lg:mr-auto mx-auto">
-        <p class="text-onyx-300 text-xs">
-          Some of the mazing companies we have worked with
+      class="grid grid-cols-1 items-center border-y border-onyx-800 py-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-24"
+    >
+      <div class="col-span-full mx-auto lg:col-span-1 lg:mr-auto lg:max-w-none">
+        <p class="text-xs text-onyx-400">
+          Some of the amazing companies we have worked with
         </p>
       </div>
-      <div class="mt-12 lg:mt-0 md:col-span-3">
+      <div class="mt-12 md:col-span-3 lg:mt-0">
         <div class="flex flex-wrap justify-between">
           {
             logos.map((logo) => (

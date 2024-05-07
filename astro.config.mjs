@@ -1,19 +1,20 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 export default defineConfig({
+  site: 'https://fluidityai.github.io',
+  base: 'aubergine',
   markdown: {
     drafts: true,
     shikiConfig: {
-      theme: "css-variables"
-    }
+      theme: "css-variables",
+    },
   },
   shikiConfig: {
     wrap: true,
     skipInline: false,
-    drafts: true
+    drafts: true,
   },
-  site: 'https://lexingtonthemes.com',
-  integrations: [tailwind(),   sitemap(), mdx()]
+  integrations: [tailwind(), sitemap(), mdx()],
 });

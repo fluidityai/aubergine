@@ -1,11 +1,9 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import rss, { pagesGlobToRssItems } from "@astrojs/rss";
 export async function GET(context) {
   return rss({
-     title: 'Lexington Themes',
-    description: 'Free and premium multipage themes and UI Kits For freelancers, developers, businesses, and personal use.Beautifully crafted with Astro.js, and Tailwind CSS — Simple & easy to customise.',
+    title: "Fluidity AI",
+    description: "Bleeding edge revenue cycle management",
     site: context.site,
-    items: await pagesGlobToRssItems(
-      import.meta.glob('./blog/*.{md,mdx}'),
-    ),
+    items: await pagesGlobToRssItems(import.meta.glob("./blog/*.{md,mdx}")),
   });
 }

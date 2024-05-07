@@ -1,39 +1,37 @@
 ---
+import siteConfig from "@/config/site.js";
+
 const testimonials = [
   {
-    name: "Amrit Nagi",
-    role: "Founder of Tailwind Toolbox",
-    testimonial:
-      "The Lorem Ipsum Company has been an integral part of our content marketing success. We have seen a notable increase in organic leads since we began using their services in 2012.",
+    name: "Seth Clark",
+    role: "Surgeon",
+    testimonial: `Fluidity AI has been an integral part of our success. We have seen a notable increase in returns since we started working with them.`,
     imgSrc: null, // No image for this testimonial
     imgAlt: null,
     classes: "hidden lg:block",
   },
   {
-    name: "Gabriel Perales",
-    role: "Software Engineer at Cabify",
-    testimonial:
-      "Aubergine has helped me with many designs, and I couldn't follow his working speed when we worked together. His designs are slick, and he delivers a lot of value; he is constantly iterating his designs improving.",
+    name: "Juan Gonzalez",
+    role: "CEO, Auto Anomaly",
+    testimonial: `I talk to the team Fluidity AI almost every day. They are my best friends.`,
     imgSrc:
       "https://d33wubrfki0l68.cloudfront.net/cabc8d70a84f6d78e56c5cd2db3f54ab6462325d/95045/images/testimonials/gabi.jpeg",
     imgAlt: "Gabriel Perales",
     classes: "lg:col-span-2",
   },
   {
-    name: "Volkan Kaya",
-    role: "Founder of Versoly.com",
-    testimonial:
-      "Aubergine is a rare breed of designer & developer that understands business needs. He leveraged his previous experience to build out a few landing pages very quickly for Versoly.",
+    name: "Dr. So-and-so",
+    role: "Phoenix Medical Group",
+    testimonial: `${siteConfig.name} is a rare breed of revenue cycle management that knows how to get it done. And by it I mean revenue cycle management.`,
     imgSrc:
       "https://pbs.twimg.com/profile_images/1039477099768295424/DkFxqf2V_400x400.jpg",
     imgAlt: "Volkan Kaya",
     classes: "lg:col-span-2",
   },
   {
-    name: "Tony Lea",
-    role: "Founder DevDojo",
-    testimonial:
-      "Aubergine has a great eye for design and he is an absolute pleasure to work with. I definitely plan on working with him on future projects of mine. I wholeheartedly recommend him to anyone seeking standout, quality work.",
+    name: "Dr. Thatguy",
+    role: "Arizona Medical Group",
+    testimonial: `I have never seen a team work as hard as the team at Fluidity AI. They are always on the ball and ready to help.`,
     imgSrc: null, // No image for this testimonial
     imgAlt: null,
     classes: "hidden lg:block",
@@ -42,47 +40,64 @@ const testimonials = [
 ---
 
 <section class="overflow-hidden">
-  <div class="px-8 py-12 mx-auto md:px-12 lg:py-24 lg:px-36 max-w-7xl">
-    <div class="text-center max-w-3xl lg:mx-auto">
-      <h3 class="text-4xl text-white font-display">
-        We have worked with the creme of the
-        <span class="md:block text-onyx-400"
+  <div class="mx-auto max-w-7xl px-8 py-12 md:px-12 lg:px-36 lg:py-24">
+    <div class="max-w-3xl text-center lg:mx-auto">
+      <h3 class="font-display text-4xl text-white">
+        We work with the creme of the
+        <span class="text-onyx-400 md:block"
           >crop and this is what they have to say</span
         >
       </h3>
     </div>
-   <ul role="list" class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 mt-12">
-  {testimonials.map((testimonial, index) => (
-    <li class={`${testimonial.classes} space-y-4`}>
-      <figure class="h-full p-4 lg:p-8 rounded-3xl bg-gradient-to-tr from-onyx-950 to-onyx-700 border border-onyx-800 shadow-massive">
-        <div class="h-full group flex flex-col justify-between">
-          <div class={`flex gap-4 pb-6 ${testimonial.imgSrc ? 'flex-col md:flex-row lg:items-center' : ''}`}>
-            {testimonial.imgSrc && (
-              <div class="overflow-hidden lg:p-2">
-                <img alt={testimonial.imgAlt} src={testimonial.imgSrc} class="object-cover rounded-full h-20 w-20 grayscale shrink-0" />
+    <ul
+      role="list"
+      class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        testimonials.map((testimonial, index) => (
+          <li class={`${testimonial.classes} space-y-4`}>
+            <figure class="h-full rounded-3xl border border-onyx-800 bg-gradient-to-tr from-onyx-950 to-onyx-700 p-4 shadow-massive lg:p-8">
+              <div class="group flex h-full flex-col justify-between">
+                <div
+                  class={`flex gap-4 pb-6 ${testimonial.imgSrc ? "flex-col md:flex-row lg:items-center" : ""}`}
+                >
+                  {testimonial.imgSrc && (
+                    <div class="overflow-hidden lg:p-2">
+                      <img
+                        alt={testimonial.imgAlt}
+                        src={testimonial.imgSrc}
+                        class="h-20 w-20 shrink-0 rounded-full object-cover grayscale"
+                      />
+                    </div>
+                  )}
+                  <div>
+                    <span
+                      class={`font-medium leading-6 text-white ${testimonial.imgSrc ? "text-sm lg:text-lg" : "text-sm"}`}
+                    >
+                      {testimonial.name}
+                    </span>
+                    <p>
+                      <a
+                        class={`text-onyx-300 group-hover:text-blue-300 ${testimonial.imgSrc ? "text-sm lg:text-lg" : "text-sm"}`}
+                        href="#_"
+                      >
+                        {testimonial.role}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <blockquote class="mt-2">
+                  <p
+                    class={`text-onyx-300 ${testimonial.imgSrc ? "text-sm lg:text-lg" : "text-sm"}`}
+                  >
+                    {testimonial.testimonial}
+                  </p>
+                </blockquote>
               </div>
-            )}
-            <div>
-              <span class={`font-medium leading-6 text-white ${testimonial.imgSrc ? 'text-sm lg:text-lg' : 'text-sm'}`}>
-                {testimonial.name}
-              </span>
-              <p>
-                <a class={`text-onyx-300 group-hover:text-blue-300 ${testimonial.imgSrc ? 'text-sm lg:text-lg' : 'text-sm'}`} href="#_">
-                  {testimonial.role}
-                </a>
-              </p>
-            </div>
-          </div>
-          <blockquote class="mt-2">
-            <p class={`text-onyx-300 ${testimonial.imgSrc ? 'text-sm lg:text-lg' : 'text-sm'}`}>
-              {testimonial.testimonial}
-            </p>
-          </blockquote>
-        </div>
-      </figure>
-    </li>
-  ))}
-</ul>
-
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </section>

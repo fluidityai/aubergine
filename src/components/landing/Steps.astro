@@ -3,76 +3,80 @@
 const steps = [
   {
     id: 1,
-    title: "Submit",
-    description: "Subscribe to a plan & request as many designs as you'd like.",
+    title: "Flat Organization",
+    description:
+      "We are a flat organization that owns our technology to keep overhead low.",
     aosDuration: "500",
   },
   {
     id: 2,
-    title: "Refine",
-    description: "Receive your design within a few business days on average.",
+    title: "Artificial Intelligence",
+    description:
+      "We use AI to be more efficient and to leverage trends in data.",
     aosDuration: "1000",
   },
   {
     id: 3,
-    title: "Build",
-    description: "We'll revise the designs until you're 100% satisfied.",
+    title: "Experienced Specialists",
+    description:
+      "Our deep industry expertise means we find dollars insurance companies thought were safe.",
     aosDuration: "1500",
   },
   {
     id: 4,
-    title: "Enjoy",
-    description: "Enjoy your marvellous new website!",
+    title: "Accountability",
+    description: "We hold insurance companies accountable.",
     aosDuration: "2500",
     specialStyle: true,
   },
 ];
 const features = [
   {
-    title: "Totally async",
+    title: "Algorithmic Payout Analysis",
     description:
-      "Don't like meetings? We don't either; so much so that we've outlawed them.",
+      "We can identify trends across carriers to identify underpaid claims.",
   },
   {
-    title: "Manage with Trello",
+    title: "Automatic Appeals",
     description:
-      "Manage your design board using Trello. View active, queued, and completed tasks.",
+      "We automatically generate and justify appeals based on years of payout data",
   },
   {
-    title: "Invite unlimited team members",
+    title: "Deep Reporting",
     description:
-      "Invite your entire team, so anyone can submit requests and track their progress.",
+      "Understand your own practice data better with our deep reporting tools.",
   },
 ];
 ---
-<section class="overflow-hidden relative">
-  <div class="px-8 py-24 mx-auto md:px-12 lg:px-36 max-w-7xl">
-    <div
-      data-aos="fade-up"
-      data-aos-duration="2000">
-      <h3 class="text-4xl text-white font-display">
-        We did reinvented the <span class="md:block text-onyx-500"
-          >wheel and also just design</span
-        >
+
+<section class="relative overflow-hidden">
+  <div class="mx-auto max-w-7xl px-8 py-24 md:px-12 lg:px-36">
+    <div data-aos="fade-up" data-aos-duration="2000">
+      <h3 class="font-display text-4xl text-white">
+        Our difference <span class="text-onyx-400 md:block">
+          Everything we do is designed to return more dollars for our clients.
+        </span>
       </h3>
     </div>
-    <div class="relative flex flex-wrap mt-24">
-      <div class="absolute top-8 left-0 right-0 hidden lg:block h-[1px] -z-1">
+    <div class="relative mt-24 flex flex-wrap">
+      <div class="-z-1 absolute left-0 right-0 top-8 hidden h-[1px] lg:block">
         <div
           class="h-[1px] w-full bg-blue-300"
           data-aos="fade-left"
-          data-aos-duration="3000">
+          data-aos-duration="3000"
+        >
           &zwnj;
         </div>
       </div>
-      <div class="grid grid-cols-2 gap-6 lg:grid-cols-4 relative">
+      <div class="relative grid grid-cols-2 gap-6 lg:grid-cols-4">
         {
           steps.map((step) => (
-            <div class="w-full pb-4 border-b border-onyx-800">
+            <div class="w-full border-b border-onyx-800 pb-4">
               <span
                 data-aos="fade-down"
                 data-aos-duration={step.aosDuration}
-                class={`flex items-center justify-center w-16 h-16 mb-5 lg:mb-16 text-blue-300 rounded-xl border bg-gradient-to-tr from-onyx-950 to-onyx-700 border-onyx-800 shadow-massive ${step.specialStyle ? "shadow-[0px_0px_0px_3px_#5576F9,0px_0px_0px_6px_rgba(124,150,250,0.5)]" : ""}`}>
+                class={`mb-5 flex h-16 w-16 items-center justify-center rounded-xl border border-blue-500 bg-gradient-to-tr from-blue-500 to-blue-400 text-white shadow-massive lg:mb-16 ${step.specialStyle ? "shadow-[0px_0px_0px_3px_#5576F9,0px_0px_0px_6px_rgba(124,150,250,0.5)]" : ""}`}
+              >
                 {step.id}
               </span>
               <div>
@@ -89,22 +93,22 @@ const features = [
     <div
       data-aos="fade-up"
       data-aos-duration="2000"
-      class="text-center ring-1 ring-onyx-800 border bg-gradient-to-tr from-onyx-950 to-onyx-700 border-onyx-800 shadow-big h-full lg:col-span-full lg:p-20 mt-24 p-8 rounded-4xl relative">
-      <h4 class="lg:text-3xl text-white font-display">
-        "Aubergine Studio are a rare breed of designers
-        <span class="md:block"
-          >and developers they understands business needs."</span
-        >
+      class="relative mt-24 h-full rounded-4xl border border-onyx-800 bg-gradient-to-tr from-blue-500 to-blue-400  p-8 text-center shadow-big ring-1 ring-onyx-800 lg:col-span-full lg:p-20"
+    >
+      <h4 class="font-display text-white lg:text-3xl">
+        "Fluidity AI always has my back.
+        <span class="md:block">They just get me."</span>
       </h4>
-      <p class="text-onyx-300 text-xl mt-6 italic uppercase">
-        Gerard Depardieu
+      <p class="mt-6 text-xl uppercase italic text-onyx-300">
+        Dr. Gerard Depardieu
       </p>
     </div>
     <div
-      class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-24 lg:text-center">
+      class="mt-24 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-6 lg:text-center"
+    >
       {
         features.map((feature) => (
-          <div class="pb-4 border-b border-onyx-800">
+          <div class="border-b border-onyx-800 pb-4">
             <p class="text-xl font-medium leading-6 text-white">
               {feature.title}
             </p>
