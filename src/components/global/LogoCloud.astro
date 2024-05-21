@@ -3,22 +3,18 @@ const logos = [
   { src: "https://fluidity-ai.com/logos/eskmd.png", alt: "ESKMD" },
   { src: "https://fluidity-ai.com/logos/glendale.png", alt: "Glendale" },
   { src: "https://fluidity-ai.com/logos/utah.png", alt: "Utah Intermountain" },
-  {
-    src: "https://fluidity-ai.com/logos/goodlife.png",
-    alt: "Good Life",
-    classes: "hidden sm:block",
-  },
+
 ];
 ---
 
 <section>
-  <div class="mx-auto max-w-7xl px-8 md:px-12 lg:px-36">
+  <div class="mx-auto max-w-8xl px-8 md:px-12 lg:px-36">
     <div
       class="grid grid-cols-1 items-center border-y border-onyx-800 py-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-24"
     >
       <div class="col-span-full mx-auto lg:col-span-1 lg:mr-auto lg:max-w-none">
-        <p class="text-xs text-onyx-400">
-          Some of the amazing companies we have worked with
+        <p class="text-sm text-onyx-400">
+          Here are some of the amazing companies we've worked with
         </p>
       </div>
       <div class="mt-12 md:col-span-3 lg:mt-0">
@@ -27,7 +23,7 @@ const logos = [
             logos.map((logo) => (
               <img
                 alt={logo.alt}
-                class={`h-8 ${logo.classes || ""}`}
+                class={`h-16 ${logo.classes || ""}`}
                 src={logo.src}
               />
             ))

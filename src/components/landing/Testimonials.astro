@@ -3,39 +3,44 @@ import siteConfig from "@/config/site.js";
 
 const testimonials = [
   {
-    name: "Seth Clark",
-    role: "Surgeon",
-    testimonial: `Fluidity AI has been an integral part of our success. We have seen a notable increase in returns since we started working with them.`,
-    imgSrc: null, // No image for this testimonial
-    imgAlt: null,
+    name: "Dr. Dave Carry",
+    testimonial:
+      "From the very beginning we saw payments increase and we are finally\n" +
+      "          getting paid what’s reasonable and customary for both our professional\n" +
+      "          practices and ASCs.",
+    role: "",
+
+    imgSrc: "/doctors/carry.png", // No image for this testimonial
+    imgAlt: "Dr. Carry",
     classes: "hidden lg:block",
   },
   {
-    name: "Juan Gonzalez",
-    role: "CEO, Auto Anomaly",
-    testimonial: `I talk to the team Fluidity AI almost every day. They are my best friends.`,
-    imgSrc:
-      "https://d33wubrfki0l68.cloudfront.net/cabc8d70a84f6d78e56c5cd2db3f54ab6462325d/95045/images/testimonials/gabi.jpeg",
-    imgAlt: "Gabriel Perales",
+    name: "Dr. Scott Frogley",
+    // role: "CEO, Auto Anomaly",
+    testimonial:
+      "Working with Fluidity-ai has been an absolute pleasure. From the moment we engaged their services, they demonstrated an unparalleled level of professionalism and expertise in handling our needs. Their team is not only highly knowledgeable about the intricate details of medical billing but also incredibly efficient in their processes, ensuring that our revenue cycle management operates smoothly and effectively.",
+    imgSrc: "/doctors/frogley.png",
+    imgAlt: "Dr. Frogley",
     classes: "lg:col-span-2",
   },
   {
-    name: "Dr. So-and-so",
-    role: "Phoenix Medical Group",
-    testimonial: `${siteConfig.name} is a rare breed of revenue cycle management that knows how to get it done. And by it I mean revenue cycle management.`,
-    imgSrc:
-      "https://pbs.twimg.com/profile_images/1039477099768295424/DkFxqf2V_400x400.jpg",
-    imgAlt: "Volkan Kaya",
+    name: "Dr. Seth Clark",
+    // role: "Phoenix Medical Group",
+    testimonial:
+      "I recommend Fluidity-ai to any healthcare provider seeking a billing partner who not only delivers results but also prioritizes customer satisfaction.  Their expertise has increased our average reimbursements and has been a very painless process for us. Working with their team has been an absolute pleasure, and we look forward to continuing our partnership for years to come.",
+
+    imgSrc: "/doctors/clark.png",
+    imgAlt: "Dr. Clark",
     classes: "lg:col-span-2",
   },
-  {
-    name: "Dr. Thatguy",
-    role: "Arizona Medical Group",
-    testimonial: `I have never seen a team work as hard as the team at Fluidity AI. They are always on the ball and ready to help.`,
-    imgSrc: null, // No image for this testimonial
-    imgAlt: null,
-    classes: "hidden lg:block",
-  },
+  // {
+  //   name: "Dr. Thatguy",
+  //   role: "Arizona Medical Group",
+  //   testimonial: `I have never seen a team work as hard as the team at Fluidity AI. They are always on the ball and ready to help.`,
+  //   imgSrc: null, // No image for this testimonial
+  //   imgAlt: null,
+  //   classes: "hidden lg:block",
+  // },
 ];
 ---
 
@@ -56,7 +61,7 @@ const testimonials = [
       {
         testimonials.map((testimonial, index) => (
           <li class={`${testimonial.classes} space-y-4`}>
-            <figure class="h-full rounded-3xl border border-onyx-800 bg-gradient-to-tr from-onyx-950 to-onyx-700 p-4 shadow-massive lg:p-8">
+            <figure class="h-full rounded-3xl border border-onyx-800 bg-gradient-to-tr from-onyx-500 to-onyx-400 p-4 shadow-massive lg:p-8">
               <div class="group flex h-full flex-col justify-between">
                 <div
                   class={`flex gap-4 pb-6 ${testimonial.imgSrc ? "flex-col md:flex-row lg:items-center" : ""}`}
@@ -78,7 +83,7 @@ const testimonials = [
                     </span>
                     <p>
                       <a
-                        class={`text-onyx-300 group-hover:text-blue-300 ${testimonial.imgSrc ? "text-sm lg:text-lg" : "text-sm"}`}
+                        class={`text-white ${testimonial.imgSrc ? "text-sm lg:text-lg" : "text-sm"}`}
                         href="#_"
                       >
                         {testimonial.role}
@@ -88,7 +93,7 @@ const testimonials = [
                 </div>
                 <blockquote class="mt-2">
                   <p
-                    class={`text-onyx-300 ${testimonial.imgSrc ? "text-sm lg:text-lg" : "text-sm"}`}
+                    class={`text-white ${testimonial.imgSrc ? "text-sm lg:text-lg" : "text-sm"}`}
                   >
                     {testimonial.testimonial}
                   </p>

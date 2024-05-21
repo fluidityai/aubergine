@@ -72,7 +72,7 @@ const features = [
               <div
                 data-aos={feature.dataAos}
                 data-aos-duration="2000"
-                class="flex h-16 w-16 items-center justify-center rounded-xl border border-onyx-800 bg-gradient-to-tr from-onyx-950 to-onyx-700 text-blue-300 shadow-massive lg:mx-auto"
+                class="flex h-16 w-16 items-center justify-center rounded-xl border border-onyx-800 bg-gradient-to-tr from-onyx-400 to-onyx-500 text-white shadow-massive lg:mx-auto"
               >
                 {feature.iconId === "calculator" && (
                   <svg
@@ -173,7 +173,9 @@ const features = [
                 {feature.title}
               </p>
             </div>
-            <p class="mt-4 text-base text-white opacity-50">{feature.description}</p>
+            <p class="mt-4 text-base text-white opacity-50">
+              {feature.description}
+            </p>
           </div>
         ))
       }

@@ -75,7 +75,7 @@ const features = [
               <span
                 data-aos="fade-down"
                 data-aos-duration={step.aosDuration}
-                class={`mb-5 flex h-16 w-16 items-center justify-center rounded-xl border border-blue-500 bg-gradient-to-tr from-blue-500 to-blue-400 text-white shadow-massive lg:mb-16 ${step.specialStyle ? "shadow-[0px_0px_0px_3px_#5576F9,0px_0px_0px_6px_rgba(124,150,250,0.5)]" : ""}`}
+                class={`mb-5 flex h-16 w-16 items-center justify-center rounded-xl border border-blue-500 bg-gradient-to-tr from-onyx-400 to-onyx-500 text-white shadow-massive lg:mb-16 ${step.specialStyle ? "shadow-[0px_0px_0px_3px_#5576F9,0px_0px_0px_6px_rgba(124,150,250,0.5)]" : ""}`}
               >
                 {step.id}
               </span>
@@ -83,7 +83,9 @@ const features = [
                 <p class="mt-12 text-xl font-medium leading-6 text-white">
                   {step.title}
                 </p>
-                <p class="mt-4 text-base text-white opacity-50">{step.description}</p>
+                <p class="mt-4 text-base text-white opacity-50">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))
@@ -93,15 +95,16 @@ const features = [
     <div
       data-aos="fade-up"
       data-aos-duration="2000"
-      class="relative mt-24 h-full rounded-4xl border border-onyx-800 bg-gradient-to-tr from-blue-500 to-blue-400  p-8 text-center shadow-big ring-1 ring-onyx-800 lg:col-span-full lg:p-20"
+      class="relative mt-24 h-full rounded-4xl border border-onyx-800 bg-gradient-to-tr from-onyx-500 to-onyx-400 p-8 text-center shadow-big ring-1 ring-onyx-800 lg:col-span-full lg:p-20"
     >
       <h4 class="font-display text-white lg:text-3xl">
-        "Fluidity AI always has my back.
-        <span class="md:block">They just get me."</span>
+        Fluidity is the billing team we have been looking for.
+        <span class="md:block"
+          >Dan’s tech along with the experience and billing knowledge of his
+          team are the best I’ve worked with.</span
+        >
       </h4>
-      <p class="mt-6 text-xl uppercase italic text-onyx-300">
-        Dr. Gerard Depardieu
-      </p>
+      <p class="mt-6 text-xl uppercase italic text-white">Dr. Dave Carry</p>
     </div>
     <div
       class="mt-24 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-6 lg:text-center"
@@ -112,7 +115,9 @@ const features = [
             <p class="text-xl font-medium leading-6 text-white">
               {feature.title}
             </p>
-            <p class="mt-4 text-base text-white opacity-50">{feature.description}</p>
+            <p class="mt-4 text-base text-white opacity-50">
+              {feature.description}
+            </p>
           </div>
         ))
       }

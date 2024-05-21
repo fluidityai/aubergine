@@ -13,8 +13,8 @@ import ServicesEntries from "../../components/services/ServicesEntries.astro";
         data-aos-duration="2000"
           class="text-center mx-auto">
         <h3 class="text-4xl text-white font-display">
-          Our Differenxxxce the <span class="md:block text-onyx-500"
-            >wheel and also just design</span
+          Our Difference is <span class="md:block text-onyx-500"
+            >Our Services</span
           >
         </h3>
       </div>
@@ -22,11 +22,12 @@ import ServicesEntries from "../../components/services/ServicesEntries.astro";
         class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-24 lg:text-center">
         {
           allPosts.map((post) => (
-            <ServicesEntries
-              url={"/services/" + post.slug}
-              service={post.data.service}
-              description={post.data.description}
-            />
+            <p class="text-white">placeholder...</p>
+            <!--<ServicesEntries-->
+            <!--  url={"/services/" + post.slug}-->
+            <!--  service={post.data.service}-->
+            <!--  description={post.data.description}-->
+            <!--/>-->
           ))
         }
       </div>
