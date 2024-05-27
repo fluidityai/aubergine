@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 export default defineConfig({
   site: "https://fluidityai.github.io",
-  // base: 'aubergine',
+  base: 'aubergine',
   markdown: {
     drafts: true,
     shikiConfig: {
