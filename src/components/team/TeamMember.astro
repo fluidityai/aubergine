@@ -50,7 +50,10 @@ const team = [
     role: "Technology",
     image: { src: "/public/team/CTO.png" },
   },
-];
+].map((x) => ({
+  ...x,
+  image: { src: "https://fluidity-ai.com/images/GarfieldCharacter.png" },
+}));
 ---
 
 <section class="relative overflow-hidden">
