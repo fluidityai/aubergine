@@ -1,33 +1,36 @@
 ---
 import { getCollection } from "astro:content";
-const allPosts = await getCollection("services");
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ServicesEntries from "../../components/services/ServicesEntries.astro";
+import { sortBy } from "lodash-es";
+const allPosts = await getCollection("services");
+console.log("allp", allPosts);
 ---
 
 <BaseLayout>
-  <section class="overflow-hidden relative">
-    <div class="px-8 pt-32 pb-24 mx-auto md:px-12 lg:px-36 lg:pt-64 max-w-7xl">
+  <section class="relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-8 pb-24 pt-32 md:px-12 lg:px-36 lg:pt-64">
       <div
         data-aos="fade-up"
         data-aos-duration="2000"
-          class="text-center mx-auto">
-        <h3 class="text-4xl text-white font-display">
-          Our Difference is <span class="md:block text-onyx-500"
+        class="mx-auto text-center"
+      >
+        <h3 class="font-display text-4xl text-white">
+          Our Difference is <span class="text-onyx-500 md:block"
             >Our Services</span
           >
         </h3>
       </div>
       <div
-        class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-24 lg:text-center">
+        class="mt-24 grid grid-cols-1 gap-6 lg:grid-cols-1 lg:gap-x-6 lg:text-center"
+      >
         {
-          allPosts.map((post) => (
-            <p class="text-white">placeholder...</p>
-            <!--<ServicesEntries-->
-            <!--  url={"/services/" + post.slug}-->
-            <!--  service={post.data.service}-->
-            <!--  description={post.data.description}-->
-            <!--/>-->
+          sortBy(allPosts, "id").map((post) => (
+            <ServicesEntries
+              url={"/services/" + post.slug}
+              service={post.data.service}
+              description={post.data.description}
+            />
           ))
         }
       </div>
