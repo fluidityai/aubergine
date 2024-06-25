@@ -1,8 +1,12 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import TeamMember from "../../components/team/TeamMember.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import TeamList from "../../components/team/TeamList.astro";
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 <BaseLayout>
-  <TeamMember />
+  <TeamList />
 </BaseLayout>

@@ -1,58 +1,71 @@
 ---
 import HeaderGrid from "../global/HeaderGrid.astro";
-import imageBlakeReid from "/public/team/blake-reid.jpg";
-import imageChelseaHagon from "/public/team/chelsea-hagon.jpg";
-import imageDriesVincent from "/public/team/dries-vincent.jpg";
-import imageEmmaDorsey from "/public/team/emma-dorsey.jpg";
-import imageJeffreyWebb from "/public/team/jeffrey-webb.jpg";
-import imageKathrynMurphy from "/public/team/kathryn-murphy.jpg";
-import imageLeonardKrasner from "/public/team/leonard-krasner.jpg";
-import imageWhitneyFrancis from "/public/team/whitney-francis.jpg";
+import { kebabCase } from "lodash-es";
 
 const team = [
   {
     name: "Dan Kennedy",
-    role: "Founder / CEO",
-    image: { src: "/public/team/dries-vincent.jpg" },
+    role: "CEO",
+    image: { src: "/public/team/Dan.jpg" },
   },
   {
     name: "Tressa Stegman",
-    role: "Operations",
-    image: { src: "/public/team/emma-dorsey.jpg" },
-  },
-  {
-    name: "Megan Lincoln",
-    role: "Operations",
-    image: { src: "/public/team/chelsea-hagon.jpg" },
-  },
-  {
-    name: "Sean Keller",
-    role: "Operations",
-    image: { src: "/public/team/blake-reid.jpg" },
-  },
-  {
-    name: "Caitlin Brown",
-    role: "Operations",
-    image: { src: "/public/team/kathryn-murphy.jpg" },
-  },
-  {
-    name: "Izzy Rhoads",
-    role: "Operations",
-    image: { src: "/public/team/whitney-francis.jpg" },
-  },
-  {
-    name: "Juan Gonzalez",
-    role: "Technology",
-    image: { src: "/public/team/leonard-krasner.jpg" },
+    role: "COO",
+    image: { src: "/public/team/Tressa.jpg" },
   },
   {
     name: "Jonathan Seneris",
-    role: "Technology",
-    image: { src: "/public/team/CTO.png" },
+    role: "CTO",
+    image: { src: "/public/team/Jonathan.jpg" },
   },
-].map((x) => ({
-  ...x,
-  image: { src: "https://fluidity-ai.com/images/GarfieldCharacter.png" },
+  {
+    name: "Juan Gonzalez",
+    role: "Quality Architect",
+    image: { src: "/public/team/Juan.jpg" },
+  },
+  {
+    name: "Megan Lincoln",
+    role: "Sr Medical Billing Lead",
+    image: { src: "/public/team/Megan.jpg" },
+  },
+  {
+    name: "Sean Keller",
+    role: "Negotiations Lead",
+    image: { src: "/public/team/Sean.jpg" },
+  },
+  {
+    name: "Caitlin Brown",
+    role: "Medical Billing Specialist",
+    image: { src: "/public/team/Caitlin.jpg" },
+  },
+  {
+    name: "Jordan Kennedy",
+    role: "Medical Billing Specialist",
+    image: { src: "/public/team/Jordan.jpg" },
+  },
+  {
+    name: "Hailly Rose",
+    role: "Medical Billing Specialist",
+    image: { src: "/public/team/Hailly.jpg" },
+  },
+  {
+    name: "Izzy Rhoads",
+    role: "Business Development",
+    image: { src: "/public/team/Izzy.jpg" },
+  },
+  {
+    name: "Lara Albertson",
+    role: "Business Development",
+    image: { src: "/public/team/Lara.jpg" },
+  },
+  {
+    name: "Samantha Kendrick",
+    role: "Creative Designer",
+    image: { src: "/public/team/Sam.jpg" },
+  },
+].map((p) => ({
+  ...p,
+  link: `/team/${p.name.split(" ")[0].toLowerCase()}`,
 }));
 ---
 
@@ -68,7 +81,7 @@ const team = [
           The Team at Fluidity AI</span
         >
       </h1>
-      <div class="mt-10 text-onyx-300">
+      <div class="mt-10 text-white">
         <p>
           Our strength lies in our deep industry experience, which benefits our
           clients in everything we do.
@@ -103,17 +116,19 @@ const team = [
                   team.map((person) => (
                     <li>
                       <div class="bg-neutral-100 group relative overflow-hidden rounded-3xl">
-                        <img
-                          alt=""
-                          {...person.image}
-                          class="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
-                        />
-                        <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black to-black/0 to-40% p-6">
-                          <p class="font-display text-base/6 font-semibold tracking-wide text-white">
-                            {person.name}
-                          </p>
-                          <p class="mt-2 text-sm text-white">{person.role}</p>
-                        </div>
+                        <a href={person.link}>
+                          <img
+                            alt=""
+                            {...person.image}
+                            class="h-96 w-full object-cover transition duration-500 motion-safe:group-hover:scale-105"
+                          />
+                          <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black to-black/0 to-40% p-6">
+                            <p class="font-display text-sm font-bold tracking-wide text-white">
+                              {person.name}
+                            </p>
+                            <p class="mt-2 text-sm text-white">{person.role}</p>
+                          </div>
+                        </a>
                       </div>
                     </li>
                   ))

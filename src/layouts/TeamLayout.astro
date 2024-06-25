@@ -3,24 +3,27 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 import HeaderGrid from "@/components/global/HeaderGrid.astro";
 ---
+
 <BaseLayout>
   <section class="relative overflow-hidden">
     <HeaderGrid />
     <div
-      class="px-8 pt-32 pb-24 mx-auto md:px-12 lg:px-36 lg:pt-64 max-w-7xl relative">
+      class="relative mx-auto max-w-7xl px-8 pb-24 pt-32 md:px-12 lg:px-36 lg:pt-64"
+    >
       <div
         data-aos="fade-down"
         data-aos-duration="3000"
-        class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        class="grid grid-cols-1 gap-12 lg:grid-cols-2"
+      >
         <div>
-          <div class="flex-wrap flex gap-4 items-center">
+          <div class="flex flex-wrap items-center gap-4">
             <img
-              class="object-cover rounded-full shrink-0 size-20 drop-shadow-3xl"
+              class="drop-shadow-3xl size-20 shrink-0 rounded-full object-cover"
               src={frontmatter.avatar.url}
               alt={frontmatter.avatar.alt}
             />
             <div>
-              <h1 class="text-4xl text-white font-display">
+              <h1 class="font-display text-4xl text-white">
                 {frontmatter.role}
               </h1>
               <p class="text-sm font-medium leading-6 text-white">
@@ -29,20 +32,20 @@ import HeaderGrid from "@/components/global/HeaderGrid.astro";
             </div>
           </div>
         </div>
-        <div class="flex flex-col lg:flex-row gap-12">
-          <div>
-            <p class="font-medium leading-6 text-white">Education</p>
-            <ul class="text-onyx-300 text-sm mt-4">
-              {frontmatter.education.map((item) => <li>{item}</li>)}
-            </ul>
-          </div>
-          <div>
-            <p class="font-medium leading-6 text-white">Experience</p>
-            <ul class="text-onyx-300 mt-4 text-sm">
-              {frontmatter.experience.map((item) => <li>{item}</li>)}
-            </ul>
-          </div>
-        </div>
+        <!--<div class="flex flex-col lg:flex-row gap-12">-->
+        <!--  <div>-->
+        <!--    <p class="font-medium leading-6 text-white">Education</p>-->
+        <!--    <ul class="text-onyx-300 text-sm mt-4">-->
+        <!--      {frontmatter.education.map((item) => <li>{item}</li>)}-->
+        <!--    </ul>-->
+        <!--  </div>-->
+        <!--  <div>-->
+        <!--    <p class="font-medium leading-6 text-white">Experience</p>-->
+        <!--    <ul class="text-onyx-300 mt-4 text-sm">-->
+        <!--      {frontmatter.experience.map((item) => <li>{item}</li>)}-->
+        <!--    </ul>-->
+        <!--  </div>-->
+        <!--</div>-->
       </div>
       <div class="prose-styles border-t border-onyx-800"><slot /></div>
     </div>
