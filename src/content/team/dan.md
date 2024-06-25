@@ -3,7 +3,7 @@ name: Dan Kennedy
 role: CEO
 
 avatar:
-  url: "/public/team/dan.jpg"
+  url: "/team/Dan.jpg"
   alt: "#_"
 ---
 

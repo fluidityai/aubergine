@@ -3,7 +3,7 @@ name: Samantha Kendrick
 role: Creative Designer
 
 avatar:
-  url: "/public/team/sam.jpg"
+  url: "/team/sam.jpg"
   alt: "#_"
 ---
 

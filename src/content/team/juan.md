@@ -3,7 +3,7 @@ name: Juan Kennedy
 role: Quality Architect
 
 avatar:
-  url: "/public/team/juan.jpg"
+  url: "/team/juan.jpg"
   alt: "#_"
 ---
 

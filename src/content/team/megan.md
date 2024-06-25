@@ -3,7 +3,7 @@ name: Megan Lincoln
 role: Sr Medical Billing Lead
 
 avatar:
-  url: "/public/team/megan.jpg"
+  url: "/team/megan.jpg"
   alt: "#_"
 ---
 

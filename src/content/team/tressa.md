@@ -3,7 +3,7 @@ name: Tressa Stegman
 role: COO
 
 avatar:
-  url: "/public/team/tressa.jpg"
+  url: "/team/tressa.jpg"
   alt: "#_"
 ---
 

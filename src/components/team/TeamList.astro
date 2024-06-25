@@ -1,67 +1,66 @@
 ---
 import HeaderGrid from "../global/HeaderGrid.astro";
-import { kebabCase } from "lodash-es";
 
 const team = [
   {
     name: "Dan Kennedy",
     role: "CEO",
-    image: { src: "/public/team/Dan.jpg" },
+    image: { src: "/team/Dan.jpg" },
   },
   {
     name: "Tressa Stegman",
     role: "COO",
-    image: { src: "/public/team/Tressa.jpg" },
+    image: { src: "/team/Tressa.jpg" },
   },
   {
     name: "Jonathan Seneris",
     role: "CTO",
-    image: { src: "/public/team/Jonathan.jpg" },
+    image: { src: "/team/Jonathan.jpg" },
   },
   {
     name: "Juan Gonzalez",
     role: "Quality Architect",
-    image: { src: "/public/team/Juan.jpg" },
+    image: { src: "/team/Juan.jpg" },
   },
   {
     name: "Megan Lincoln",
     role: "Sr Medical Billing Lead",
-    image: { src: "/public/team/Megan.jpg" },
+    image: { src: "/team/Megan.jpg" },
   },
   {
     name: "Sean Keller",
     role: "Negotiations Lead",
-    image: { src: "/public/team/Sean.jpg" },
+    image: { src: "/team/Sean.jpg" },
   },
   {
     name: "Caitlin Brown",
     role: "Medical Billing Specialist",
-    image: { src: "/public/team/Caitlin.jpg" },
+    image: { src: "/team/Caitlin.jpg" },
   },
   {
     name: "Jordan Kennedy",
     role: "Medical Billing Specialist",
-    image: { src: "/public/team/Jordan.jpg" },
+    image: { src: "/team/Jordan.jpg" },
   },
   {
     name: "Hailly Rose",
     role: "Medical Billing Specialist",
-    image: { src: "/public/team/Hailly.jpg" },
+    image: { src: "/team/Hailly.jpg" },
   },
   {
     name: "Izzy Rhoads",
     role: "Business Development",
-    image: { src: "/public/team/Izzy.jpg" },
+    image: { src: "/team/Izzy.jpg" },
   },
   {
     name: "Lara Albertson",
     role: "Business Development",
-    image: { src: "/public/team/Lara.jpg" },
+    image: { src: "/team/Lara.jpg" },
   },
   {
     name: "Samantha Kendrick",
     role: "Creative Designer",
-    image: { src: "/public/team/Sam.jpg" },
+    image: { src: "/team/Sam.jpg" },
   },
 ].map((p) => ({
   ...p,
@@ -98,15 +97,11 @@ const team = [
         </div>
       </div>
 
-      <!--<div class="mt-24 text-white sm:mt-32 lg:mt-40"></div>-->
       <div class="space-y-24">
         <>
           <div
             class="grid grid-cols-1 gap-6 pt-12 sm:pt-16 lg:grid-cols-4 xl:gap-8"
           >
-            <!--<h2 class="text-neutral-950 font-display text-2xl font-semibold">-->
-            <!--  {group.title}-->
-            <!--</h2>-->
             <div class="lg:col-span-3">
               <ul
                 role="list"
@@ -139,149 +134,5 @@ const team = [
         </>
       </div>
     </div>
-    <!--<div>-->
-    <!--  <div>-->
-    <!--    <div class="mt-24">-->
-    <!--      <p class="text-sm font-medium leading-6 text-white">-->
-    <!--        Figtree /<span class="text-onyx-300">-->
-    <!--          Clash display / JetBrains Mono</span-->
-    <!--        ><span class="text-onyx-300"> Clash display</span>-->
-    <!--      </p>-->
-    <!--      <div class="mt-6 divide-y divide-onyx-800 border-y border-onyx-800">-->
-    <!--        <div class="grid grid-cols-3 items-end py-4 lg:grid-cols-4 lg:py-8">-->
-    <!--          <div><span class="text-white">Header 1</span></div>-->
-    <!--          <div class="col-span-2 lg:col-span-3">-->
-    <!--            <span class="font-display text-4xl text-white lg:text-5xl"-->
-    <!--              >Header 1</span-->
-    <!--            >-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--        <div class="grid grid-cols-3 items-end py-4 lg:grid-cols-4 lg:py-8">-->
-    <!--          <div><span class="text-white">Header 2</span></div>-->
-    <!--          <div class="col-span-2 lg:col-span-3">-->
-    <!--            <span class="font-display text-4xl text-white">Header 2</span>-->
-    <!--          </div>-->
-    <!--        </div>-->
-
-    <!--        <div class="grid grid-cols-3 items-end py-4 lg:grid-cols-4 lg:py-8">-->
-    <!--          <div><span class="text-white">Link</span></div>-->
-    <!--          <div class="col-span-2 lg:col-span-3">-->
-    <!--            <span-->
-    <!--              class="underlined text-sm text-blue-300 hover:text-onyx-400"-->
-    <!--              >Link text</span-->
-    <!--            >-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--        <div class="grid grid-cols-3 items-end py-4 lg:grid-cols-4 lg:py-8">-->
-    <!--          <div><span class="text-white">Subtitle</span></div>-->
-    <!--          <div class="col-span-2 lg:col-span-3">-->
-    <!--            <span class="text-lg leading-6 text-onyx-300"-->
-    <!--              >Subtitle text</span-->
-    <!--            >-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--        <div class="grid grid-cols-3 items-end py-4 lg:grid-cols-4 lg:py-8">-->
-    <!--          <div><span class="text-white">Paragraph</span></div>-->
-    <!--          <div class="col-span-2 lg:col-span-3">-->
-    <!--            <span class="text-base text-onyx-300"-->
-    <!--              >I am so happy, my dear friend, so absorbed in the exquisite-->
-    <!--              sense of mere tranquil existence, that I neglect my talents.</span-->
-    <!--            >-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--        <div class="grid grid-cols-3 items-end py-4 lg:grid-cols-4 lg:py-8">-->
-    <!--          <div><span class="text-white">Caption</span></div>-->
-    <!--          <div class="col-span-2 lg:col-span-3">-->
-    <!--            <span class="text-sm text-onyx-300"-->
-    <!--              >Picture about somethign</span-->
-    <!--            >-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--        <div class="grid grid-cols-3 items-end py-4 lg:grid-cols-4 lg:py-8">-->
-    <!--          <div><span class="text-white">List</span></div>-->
-    <!--          <div class="col-span-2 lg:col-span-3">-->
-    <!--            <ul-->
-    <!--              class="mt-6 list-inside list-decimal space-y-3 text-base text-onyx-300"-->
-    <!--              role="list"-->
-    <!--            >-->
-    <!--              <li>Next.js and/or Nuxt.js</li>-->
-    <!--              <li>CReact Native .</li>-->
-    <!--              <li>AWS and/or Firebase</li>-->
-    <!--              <li>Familiarity with noSQL databases</li>-->
-    <!--            </ul>-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--  </div>-->
-    <!--</div>-->
   </div>
-  <!--<div class="mx-auto max-w-7xl px-8 py-12 md:px-12 lg:px-36">-->
-  <!--  <div>-->
-  <!--    <p class="text-sm font-medium leading-6 text-white">Buttons</p>-->
-  <!--    <div class="mt-6 flex w-full flex-wrap gap-3">-->
-  <!--      <a-->
-  <!--        class="text-onyx-950-700 hover:shadow-none inline-flex w-full transform items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-500 via-indigo-400 to-indigo-300 px-6 py-4 text-center text-sm shadow-massive duration-500 ease-in-out hover:to-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2 focus:ring-offset-onyx-900 sm:w-auto"-->
-  <!--        href="/">Primary button</a-->
-  <!--      >-->
-  <!--      <a-->
-  <!--        class="hover:shadow-none inline-flex w-full transform items-center justify-center rounded-xl border border-onyx-800 bg-onyx-900 px-6 py-4 text-center text-sm text-onyx-300 shadow-massive duration-500 ease-in-out hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-onyx-300 focus:ring-offset-2 focus:ring-offset-onyx-900 sm:w-auto"-->
-  <!--        href="#benefits"-->
-  <!--        >Secondary button-->
-  <!--      </a>-->
-  <!--      <a-->
-  <!--        class="hover:shadow-none inline-flex w-full transform items-center justify-center rounded-xl bg-onyx-800 px-6 py-4 text-center text-sm text-onyx-300 shadow-massive duration-500 ease-in-out hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-onyx-300 focus:ring-offset-2 focus:ring-offset-onyx-900 sm:w-auto"-->
-  <!--        href="#benefits"-->
-  <!--        >Tertiary button-->
-  <!--      </a>-->
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--</div>-->
-
-  <!--<div class="mx-auto max-w-7xl px-8 py-12 md:px-12 lg:px-36">-->
-  <!--  <div>-->
-  <!--    <p class="text-sm font-medium leading-6 text-white">Main color palette</p>-->
-  <!--    <div class="mt-6 py-4">-->
-  <!--      <div class="grid grid-cols-2 gap-2 lg:grid-cols-3">-->
-  <!--        <div class="space-y-2">-->
-  <!--          <div class="rounded-lg bg-white p-6 lg:justify-center"></div>-->
-  <!--          <div-->
-  <!--            class="rounded-lg bg-gradient-to-tr from-indigo-500 via-indigo-400 to-indigo-300 p-6 lg:justify-center"-->
-  <!--          >-->
-  <!--          </div>-->
-  <!--        </div>-->
-  <!--        <div>-->
-  <!--          <div class="rounded-t-lg bg-blue-50 p-6 lg:justify-center"></div>-->
-  <!--          <div class="bg-blue-100 p-6 lg:justify-center"></div><div-->
-  <!--            class="bg-blue-200 p-6 lg:justify-center"-->
-  <!--          >-->
-  <!--          </div><div class="bg-blue-300 p-6 lg:justify-center"></div><div-->
-  <!--            class="bg-blue-400 p-6 lg:justify-center"-->
-  <!--          >-->
-  <!--          </div><div class="rounded-b-lg bg-blue-500 p-6 lg:justify-center">-->
-  <!--          </div>-->
-  <!--        </div>-->
-  <!--        <div>-->
-  <!--          <div class="rounded-t-lg bg-onyx-50 p-6 lg:justify-center"></div>-->
-  <!--          <div class="bg-onyx-100 p-6 lg:justify-center"></div><div-->
-  <!--            class="bg-onyx-200 p-6 lg:justify-center"-->
-  <!--          >-->
-  <!--          </div><div class="bg-onyx-300 p-6 lg:justify-center"></div><div-->
-  <!--            class="bg-onyx-400 p-6 lg:justify-center"-->
-  <!--          >-->
-  <!--          </div><div class="bg-onyx-500 p-6 lg:justify-center"></div><div-->
-  <!--            class="bg-onyx-600 p-6 lg:justify-center"-->
-  <!--          >-->
-  <!--          </div><div class="bg-onyx-700 p-6 lg:justify-center"></div><div-->
-  <!--            class="bg-onyx-800 p-6 lg:justify-center"-->
-  <!--          >-->
-  <!--          </div><div class="bg-onyx-900 p-6 lg:justify-center"></div><div-->
-  <!--            class="rounded-b-lg border border-onyx-800 bg-onyx-950 p-6 lg:justify-center"-->
-  <!--          >-->
-  <!--          </div>-->
-  <!--        </div>-->
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--</div>-->
 </section>

@@ -3,7 +3,7 @@ name: Lara Albertson
 role: Business Development
 
 avatar:
-  url: "/public/team/lara.jpg"
+  url: "/team/lara.jpg"
   alt: "#_"
 ---
 

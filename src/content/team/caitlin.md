@@ -3,7 +3,7 @@ name: Caitlin Brown
 role: Medical Billing Specialist
 
 avatar:
-  url: "/public/team/caitlin.jpg"
+  url: "/team/caitlin.jpg"
   alt: "#_"
 ---
 

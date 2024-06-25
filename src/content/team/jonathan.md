@@ -3,7 +3,7 @@ name: Jonathan Seneris
 role: CTO
 
 avatar:
-  url: "/public/team/jonathan.jpg"
+  url: "/team/jonathan.jpg"
   alt: "#_"
 ---
 
