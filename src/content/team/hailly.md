@@ -3,7 +3,7 @@ name: Hailly Rose
 role: Medical Billing Specialist
 
 avatar:
-  url: "/team/hailly.jpg"
+  url: "/team/Hailly.jpg"
   alt: "#_"
 ---
 

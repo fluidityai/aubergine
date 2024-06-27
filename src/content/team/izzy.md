@@ -3,7 +3,7 @@ name: Izzy Rhodes
 role: Business Development
 
 avatar:
-  url: "/team/izzy.jpg"
+  url: "/team/Izzy.jpg"
   alt: "#_"
 ---
 

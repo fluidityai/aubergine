@@ -3,7 +3,7 @@ name: Sean Keller
 role: Negotiations Lead
 
 avatar:
-  url: "/team/sean.jpg"
+  url: "/team/Sean.jpg"
   alt: "#_"
 ---
 

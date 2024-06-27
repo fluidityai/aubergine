@@ -3,7 +3,7 @@ name: Jordan Kennedy
 role: Medical Billing Specialist
 
 avatar:
-  url: "/team/jordan.jpg"
+  url: "/team/Jordan.jpg"
   alt: "#_"
 ---
 

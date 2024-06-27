@@ -1,9 +1,9 @@
 ---
-name: Juan Kennedy
+name: Juan Gonzales
 role: Quality Architect
 
 avatar:
-  url: "/team/juan.jpg"
+  url: "/team/Juan.jpg"
   alt: "#_"
 ---
 
