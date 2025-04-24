@@ -3,12 +3,12 @@ import "../styles/global.css";
 import Metas from "./seo/Metas.astro";
 import Favicons from "./seo/Favicons.astro";
 const {
-  title = "Fluidity AI",
+  title = "Fluidity-AI",
   description = "#",
   url,
-  socialImage = "/social-preview-image.png",
-  twitterImage = "/twitter-preview-image.png", // Assuming you have a separate image for Twitter
-  author = "Fluidity AI",
+  socialImage = "/logos/full-color-blue.png",
+  twitterImage = "/logos/full-color-blue.png", // Assuming you have a separate image for Twitter
+  author = "Fluidity-AI",
 } = Astro.props;
 const sanitizedTitle = title.toLowerCase().replaceAll(" ", "-");
 ---
@@ -36,3 +36,15 @@ const sanitizedTitle = title.toLowerCase().replaceAll(" ", "-");
 />
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WE696FYNTP"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-WE696FYNTP");
+</script>

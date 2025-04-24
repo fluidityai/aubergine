@@ -12,7 +12,7 @@ const testimonials = [
 
     imgSrc: "/doctors/redondo.png", // No image for this testimonial
     imgAlt: "Redondo",
-    classes: "hidden lg:block",
+    classes: "lg:block",
   },
   {
     name: "Interventional Pain Specialist",
@@ -49,7 +49,7 @@ const testimonials = [
     <div class="max-w-3xl text-center lg:mx-auto">
       <h3 class="font-display text-4xl text-white">
         We work with the best of the best.
-        <span class="md:block">Here is what our providers have to say</span>
+        <span class="md:block">Here's what our providers have to say</span>
       </h3>
     </div>
     <ul
@@ -62,7 +62,7 @@ const testimonials = [
             <figure class="h-full rounded-3xl border border-onyx-800 bg-gradient-to-tr from-onyx-500 to-onyx-400 p-4 shadow-massive lg:p-8">
               <div class="group flex h-full flex-col justify-between">
                 <div
-                  class={`flex gap-4 pb-6 ${testimonial.imgSrc ? "flex-col md:flex-row lg:items-center" : ""}`}
+                  class={`flex gap-4 pb-4 ${testimonial.imgSrc ? "flex-col md:flex-row lg:items-center" : ""}`}
                 >
                   {testimonial.imgSrc && (
                     <div class="overflow-hidden lg:p-2">
@@ -80,12 +80,11 @@ const testimonials = [
                       {testimonial.name}
                     </span>
                     <p>
-                      <a
+                      <span
                         class={`text-white ${testimonial.imgSrc ? "text-sm lg:text-lg" : "text-sm"}`}
-                        href="#_"
                       >
                         {testimonial.role}
-                      </a>
+                      </span>
                     </p>
                   </div>
                 </div>

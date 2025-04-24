@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,12 +12,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^2.1.1",
-    "@astrojs/preact": "^3.1.1",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.1",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.4.15",
+    "@astrojs/mdx": "^4.2.2",
+    "@astrojs/preact": "^4.0.7",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@sendgrid/mail": "^8.1.5",
+    "astro": "^5.5.5",
     "astro-robots": "^2.0.1",
     "lodash-es": "^4.17.21",
     "preact": "^10.19.6"

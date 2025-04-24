@@ -1,0 +1,36 @@
+# Fluidity AI Website Project Rules
+
+## Code Style
+- Use Astro.js for page and component structure
+- Use Tailwind CSS for styling
+- Follow the existing component structure and naming conventions
+- Use Alpine.js for client-side interactivity when needed
+
+## Project Structure
+- Components are organized in the `src/components` directory
+- Global components are in `src/components/global`
+- Page-specific components are in directories named after the feature (e.g., `forms`, `landing`)
+- Layouts are in the `src/layouts` directory
+- Pages are in the `src/pages` directory
+
+## Form Handling
+- Use server-side form processing with Astro's built-in capabilities
+- Validate forms both client-side and server-side
+- Provide clear success and error messages to users
+- Use SendGrid for email processing
+
+## Environment Variables
+- Store sensitive information like API keys in the `.env` file
+- Reference environment variables using `import.meta.env.VARIABLE_NAME`
+- Provide fallback values for environment variables when appropriate
+
+## Design Patterns
+- Follow the existing color scheme and typography
+- Use the existing component styles for consistency
+- Ensure all pages and components are responsive
+- Follow accessibility best practices
+
+## Deployment
+- The site is built using `npm run build`
+- The build output is in the `dist` directory
+- Environment variables need to be set in the production environment

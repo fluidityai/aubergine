@@ -1,6 +1,69 @@
 ---
 import HeaderGrid from "../global/HeaderGrid.astro";
+
+// Simple form handling with Formspree
+const formAction = "https://formspree.io/f/xpwdzgvo";
 ---
+
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+    
+    if (form) {
+      // Client-side validation before submitting to Formspree
+      form.addEventListener('submit', (e) => {
+        // Get form data
+        const formData = new FormData(form);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+        
+        // Basic validation
+        let valid = true;
+        const errors = {
+          name: '',
+          email: '',
+          message: ''
+        };
+        
+        // Reset error messages
+        document.querySelectorAll('.error-message').forEach(el => {
+          el.textContent = '';
+          el.style.display = 'none';
+        });
+        
+        if (!name || name.trim() === '') {
+          errors.name = 'Name is required';
+          valid = false;
+          document.getElementById('name-error').textContent = errors.name;
+          document.getElementById('name-error').style.display = 'block';
+          e.preventDefault();
+        }
+        
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          errors.email = 'Valid email is required';
+          valid = false;
+          document.getElementById('email-error').textContent = errors.email;
+          document.getElementById('email-error').style.display = 'block';
+          e.preventDefault();
+        }
+        
+        if (!message || message.trim() === '') {
+          errors.message = 'Message is required';
+          valid = false;
+          document.getElementById('message-error').textContent = errors.message;
+          document.getElementById('message-error').style.display = 'block';
+          e.preventDefault();
+        }
+        
+        // If valid, Formspree will handle the submission
+        // The form will be submitted normally
+      });
+    }
+  });
+</script>
 
 <section class="relative overflow-hidden">
   <HeaderGrid />
@@ -21,7 +84,7 @@ import HeaderGrid from "../global/HeaderGrid.astro";
             </p>
           </div>
         </div>
-        <form>
+        <form id="contact-form" action={formAction} method="POST">
           <div class="mt-12 space-y-6">
             <div>
               <label for="name" class="block text-sm font-medium text-white"
@@ -36,22 +99,10 @@ import HeaderGrid from "../global/HeaderGrid.astro";
                 class="text-lime mt-2 block h-12 w-full appearance-none rounded-md border border-onyx-800 bg-onyx-900 px-3 py-2 text-blue-300 placeholder-onyx-500 focus:border-blue-300 focus:bg-onyx-800 focus:outline-none focus:ring-blue-300 sm:text-sm"
               />
             </div>
-            <div class="col-span-full">
-              <label for="company" class="block text-sm font-medium text-white"
-                >What is the name of your company / organisation?</label
-              >
-              <input
-                id="company"
-                name="company"
-                type="text"
-                placeholder="Your Company"
-                aria-placeholder="Company name"
-                class="text-lime mt-2 block h-12 w-full appearance-none rounded-md border border-onyx-800 bg-onyx-900 px-3 py-2 text-blue-300 placeholder-onyx-500 focus:border-blue-300 focus:bg-onyx-800 focus:outline-none focus:ring-blue-300 sm:text-sm"
-              />
-            </div>
+            <p id="name-error" class="error-message text-red-500 text-sm mt-1" style="display: none;"></p>
             <div class="col-span-full">
               <label for="email" class="block text-sm font-medium text-white"
-                >How shall we contact you?</label
+                >Email address</label
               >
               <input
                 id="email"
@@ -62,6 +113,22 @@ import HeaderGrid from "../global/HeaderGrid.astro";
                 aria-placeholder="Your email"
                 class="text-lime mt-2 block h-12 w-full appearance-none rounded-md border border-onyx-800 bg-onyx-900 px-3 py-2 text-blue-300 placeholder-onyx-500 focus:border-blue-300 focus:bg-onyx-800 focus:outline-none focus:ring-blue-300 sm:text-sm"
               />
+              <p id="email-error" class="error-message text-red-500 text-sm mt-1" style="display: none;"></p>
+            </div>
+
+            <div class="col-span-full">
+              <label for="message" class="block text-sm font-medium text-white"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Your message"
+                aria-placeholder="Your message"
+                class="text-lime mt-2 block w-full appearance-none rounded-md border border-onyx-800 bg-onyx-900 px-3 py-2 text-blue-300 placeholder-onyx-500 focus:border-blue-300 focus:bg-onyx-800 focus:outline-none focus:ring-blue-300 sm:text-sm"
+              ></textarea>
+              <p id="message-error" class="error-message text-red-500 text-sm mt-1" style="display: none;"></p>
             </div>
 
             <div class="col-span-full">
@@ -69,12 +136,26 @@ import HeaderGrid from "../global/HeaderGrid.astro";
                 <button
                   type="submit"
                   class="text-onyx-950-700 hover:shadow-none inline-flex h-12 w-full transform items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-500 via-indigo-400 to-indigo-300 px-6 py-3 text-center text-sm shadow-massive duration-500 ease-in-out hover:to-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2 focus:ring-offset-onyx-900"
-                  >Get started today</button
+                  >Send message</button
                 >
               </div>
             </div>
           </div>
         </form>
+        
+        <div id="success-message" class="mt-6 rounded-md bg-green-50 p-4" style="display: none;">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-green-800">Message sent successfully! We'll be in touch soon.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
