@@ -2,17 +2,31 @@
 import BaseHead from "@/components/BaseHead.astro";
 import Navigation from "@/components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
+
+const { title, description } = Astro.props;
 ---
 
 <html lang="en" class="selection:bg-blue-500 selection:text-white">
   <head>
-    <BaseHead />
+    <BaseHead title={title} description={description} />
   </head>
   <body class="bg-blue-500">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5R5JKJJW"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <Navigation />
     <slot />
-    <Footer />
-    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+    <footer />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/aos@2.3.1/dist/aos.js"
     ></script>
     <script type="text/javascript">
       AOS.init();
@@ -20,13 +34,74 @@ import Footer from "@/components/global/Footer.astro";
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"></script>
+      referrerpolicy="no-referrer"
+    ></script>
     <script type="text/javascript">
       //https://micku7zu.github.io/vanilla-tilt.js/
       VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
         max: 35, // max tilt rotation (degrees)
         speed: 2500, // Speed of the enter/exit transition
         transition: true, // Set a transition on enter/exit.
+      });
+    </script>
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contact-form");
+        const successMessage = document.getElementById("success-message");
+
+        if (form) {
+          // Client-side validation before submitting to Formspree
+          form.addEventListener("submit", (e) => {
+            // Get form data
+            const formData = new FormData(form);
+            const name = formData.get("name");
+            const email = formData.get("email");
+            const message = formData.get("message");
+
+            // Basic validation
+            let valid = true;
+            const errors = {
+              name: "",
+              email: "",
+              message: "",
+            };
+
+            // Reset error messages
+            document.querySelectorAll(".error-message").forEach((el) => {
+              el.textContent = "";
+              el.style.display = "none";
+            });
+
+            if (!name || name.trim() === "") {
+              errors.name = "Name is required";
+              valid = false;
+              document.getElementById("name-error").textContent = errors.name;
+              document.getElementById("name-error").style.display = "block";
+              e.preventDefault();
+            }
+
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+              errors.email = "Valid email is required";
+              valid = false;
+              document.getElementById("email-error").textContent = errors.email;
+              document.getElementById("email-error").style.display = "block";
+              e.preventDefault();
+            }
+
+            if (!message || message.trim() === "") {
+              errors.message = "Message is required";
+              valid = false;
+              document.getElementById("message-error").textContent =
+                errors.message;
+              document.getElementById("message-error").style.display = "block";
+              e.preventDefault();
+            }
+
+            // If valid, Formspree will handle the submission
+            // The form will be submitted normally
+          });
+        }
       });
     </script>
   </body>

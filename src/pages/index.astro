@@ -4,21 +4,30 @@ import Hero from "@/components/landing/Hero.astro";
 import Steps from "@/components/landing/Steps.astro";
 import Benefits from "@/components/landing/Benefits.astro";
 import Services from "@/components/landing/Services.astro";
-import Work from "@/components/landing/Work.astro";
 import Testimonials from "@/components/landing/Testimonials.astro";
-import Pricing from "@/components/landing/Pricing.astro";
+import Contact from "@/components/forms/Contact.astro";
 import Cta from "@/components/global/Cta.astro";
 import LogoCloud from "@/components/global/LogoCloud.astro";
+import HeaderGrid from "../components/global/HeaderGrid.astro";
 ---
 
-<BaseLayout>
-  <Hero />
+<BaseLayout title="Fluidity AI | Revenue Cycle Management Automation for Healthcare" description="Streamline your healthcare revenue cycle management with Fluidity AI's intelligent automation and expert human support. Book a consultation today.">
+  <div class="relative">
+    <HeaderGrid />
+    <div class="flex flex-col xl:flex-row">
+      <div class="w-full xl:w-3/5">
+        <Hero />
+      </div>
+      <div class="w-full xl:w-2/5">
+        <Contact />
+      </div>
+    </div>
+  </div>
   <Steps />
   <Services />
   <!--<Work />-->
   <Benefits />
   <Testimonials />
   <!--<Pricing />-->
-  <Cta />
   <LogoCloud />
 </BaseLayout>
